@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>MODX Revolution - Контакты</title>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no"/>
+  <link rel="icon" href="http://openheart.ew.loc/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/tpl/css/grid.css">
+    <link rel="stylesheet" href="assets/tpl/css/camera.css"/>
+    <link rel="stylesheet" href="assets/tpl/css/contact-form.css"/>
+    <link rel="stylesheet" href="assets/tpl/css/style.css">
+
+    <script src="assets/tpl/js/jquery.js"></script>
+    <script src="assets/tpl/js/jquery-migrate-1.2.1.js"></script>
+
+    <!--[if lt IE 9]>
+    <html class="lt-ie9">
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a>
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src='assets/tpl/js/device.min.js'></script>
+<link rel="stylesheet" href="assets/components/yandexmaps/css/web/default.css" type="text/css" />
+</head>
+
+<body>
+<div class="page">
+    <!--========================================================
+                              HEADER
+    =========================================================-->
+    <header id="header" class="header">
+        <div id="stuck_container" class="stuck_container">
+            <div class="container">
+                <div class="header_panel">
+                    <div class="brand">
+                        <a href="index.html">
+                          <img src="assets/tpl/images/logo.png" alt=""/>
+                          <h1> Благородные <span>сердца </span></h1>
+                        </a>
+                    </div>
+
+                    <nav class="nav">
+                        <ul class="sf-menu"><li class="first"><a href="index.html" >Главная</a></li><li><a href="about-us.html" >О нас</a></li><li><a href="we-helped.html" >Мы помогли</a></li><li class="active"><a href="contacts.html" >Контакты</a></li><li class="last"><a href="i-want-to-help!.html" >Хочу помочь!</a></li></ul>
+                        
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!--========================================================
+                              CONTENT
+    =========================================================-->
+                
+    <section id="content" class="content">
+      
+      
+      <script type="text/javascript">
+if(typeof jQuery == "undefined"){
+	document.write('<script type="text/javascript" src="http://yandex.st/jquery/2.1.1/jquery.min.js" ></'+'script>');
+}
+
+if(typeof ymaps == "undefined"){
+	//document.write('<script type="text/javascript" src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" ></'+'script>');
+	document.write('<script type="text/javascript" src="http://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;load=Map,Placemark,GeoObjectCollection,map.addon.balloon,geoObject.addon.balloon,package.controls,templateLayoutFactory,overlay.html.Placemark" ></'+'script>');
+}
+</script>
+
+
+<div id="yandexMap" style="width:100%;height: 286px;" class="ymBlock"></div>
+
+
+
+<div style="clear:both"></div>
+
+
+<style>
+.search-map-result-view {
+display: inline-block;
+white-space: nowrap;
+position: relative;
+top: -13.5px;
+left: -13.5px;
+height: 27px;
+}
+.search-map-result-view._active {
+top: -42px;
+}
+
+.search-map-result-view__overlay {
+position: absolute;
+width: 100%;
+height: 100%;
+z-index: 3;
+cursor: pointer;
+}
+
+.search-map-result-view__icon {
+background: url("http://yastatic.net/maps-beta/_/QGuTq1D4vadJPJijE7xfGoI0UBY.svg");
+width: 27px;
+height: 27px;
+}
+.search-map-result-view__icon {
+display: inline-block;
+position: relative;
+vertical-align: middle;
+z-index: 2;
+}
+.search-map-result-view._active .search-map-result-view__icon {
+background: url("http://yastatic.net/maps-beta/_/ZDo_aSO8szfWh3gPYVWHwgyDa_E.svg");
+width: 34px;
+height: 42px;
+}
+.search-map-result-view__title {
+height: 27px;
+line-height: 27px;
+}
+.search-map-result-view__title {
+background: rgba(255,255,255,.89);
+display: inline-block;
+vertical-align: top;
+z-index: 1;
+padding: 0 5px 0 19px;
+margin-left: -14px;
+border-radius: 5px;
+border:1px solid #ddd;
+max-width: none;
+text-overflow: ellipsis;
+overflow: hidden;
+font-size:13px;
+}
+.search-map-result-view._active .search-map-result-view__title:not(:empty) {
+display: inline-block;
+margin-left: -21px;
+}
+</style>
+
+<script type="text/javascript">
+var ymFormId = '#ymFiltersForm';
+var ymFormAction = $(ymFormId).attr('action');
+
+ymaps.ready()
+	.done(function (ymaps) {
+		var mapCenteryandexMap = [55.753565715196416,37.62001016381833],
+			myMapyandexMap = new ymaps.Map('yandexMap', {
+				center: mapCenteryandexMap,
+				zoom: 14,
+				controls: ['zoomControl']
+			});
+		
+		myMapyandexMap.controls.add(new ymaps.control.TypeSelector({ options: { position: { left: 10, top: 10 }}}));
+		
+		/*
+		myPlacemark = new ymaps.Placemark(myMapyandexMap.getCenter(), {
+			iconContent: 'Собственный значок метки',
+			hintContent: 'Собственный значок метки',
+			imageClass: 'search-map-result-view'
+		}, {
+			pointOverlay: ymaps.overlay.html.Placemark,
+			preset: 'twirl#stretchyIcon',
+			iconLayout: ymaps.templateLayoutFactory.createClass('<div class="$[properties.imageClass] _active"><div class="$[properties.imageClass]__icon"></div><div class="$[properties.imageClass]__title">[if properties.iconContent]<i>$[properties.iconContent]</i>[else]$[properties.hintContent][endif]</div></div>')
+			//iconContentLayout: ymaps.templateLayoutFactory.createClass( '<div style="width:auto; max-width:none; background-color:rgba(255,255,255,0.49);">[if properties.iconContent]<i>$[properties.iconContent]</i>[else]$[properties.hintContent][endif]</div>' )
+		});
+		
+		myMapyandexMap.geoObjects.add(myPlacemark);
+		
+		console.log( myPlacemark.getOverlay() );
+		
+		myPlacemark.getOverlay().then(function (overlay)
+		{
+			console.log( overlay.getElement().markerLayer );
+			console.log( overlay.markerLayer );
+			
+			ymaps.domEvent.manager
+			.add(overlay.markerLayer.get(0), 'mouseenter', function (event) {
+				console.log(event.get('type')); // click
+			});
+		});
+		*/
+		
+		
+		
+		
+		
+		/*
+		domEventsGroup = ymaps.domEvent.manager.group(myPlacemark);
+		domEventsGroup.add('mouseenter', function (e)
+		{
+			console.log(e.get('type'));
+			
+			domEventsGroup.removeAll();
+		});
+		*/
+		
+		/*
+		myMapyandexMap.myPlacemark.events.add('mouseenter', function (e)
+		{
+			console.log( e );
+			
+		});
+		*/
+		
+		
+		
+		
+		
+		$.getJSON( ymFormAction , "ymJSON=1" ).done( function (json) {
+			window.geoObjects = ymaps.geoQuery(json);
+			
+			window.clusters = geoObjects.search("geometry.type == 'Point'").clusterize({ preset: 'islands#invertedVioletClusterIcons'});
+			myMapyandexMap.geoObjects.add(clusters);
+			
+			
+			geoObjects.then(function () {
+				//window.placemarks = geoObjects.search("geometry.type == 'Point'");
+				
+				//myMapyandexMap.geoObjects.options.unsetAll();
+				myMapyandexMap.geoObjects.options.set({
+					pointOverlay: ymaps.overlay.html.Placemark,
+					preset: 'twirl#stretchyIcon',
+					pane: 'overlaps',
+					iconLayout: ymaps.templateLayoutFactory.createClass('<div id="marker_$[properties.modx_id]" class="$[properties.imageClass] _active"><div class="$[properties.imageClass]__overlay"></div><div class="$[properties.imageClass]__icon"></div><div class="$[properties.imageClass]__title">[if properties.iconContent]<i>$[properties.iconContent]</i>[else]$[properties.hintContent][endif]</div></div>')
+				});
+				
+				//myMapyandexMap.geoObjects.events.add('click', function (e) {
+				//	var target = e.get('target');
+				//	console.log( target );
+				//});
+			});
+			
+			
+			
+			
+				geoObjects.applyBoundsToMap(myMapyandexMap, {
+					checkZoomRange: true
+				});
+			
+		});
+		
+		
+		// >> Обработка события клика на маркере
+		myMapyandexMap.geoObjects.events.add('click', function (e)
+		{
+			var object = e.get('target');
+			var goToRes = 0;
+			var goToResBlank = 1;
+			var goToJS = '';
+			
+			if( goToRes !== 'undefined' && goToRes !== 'null' && goToRes !== '' && goToRes !== 0 )
+			{
+				if( typeof object.properties.get(0).modx_id !== 'undefined'
+					&& object.properties.get(0).modx_id !== 'null' )
+				{
+					var modx_id = object.properties.get(0).modx_id;
+					//console.log( modx_id );
+					
+					if( goToJS !== 'undefined' && goToJS !== 'null' && goToJS !== '' && goToJS !== 0 )
+					{
+						
+					}
+					else if( goToResBlank !== 'undefined' && goToResBlank !== 'null' && goToResBlank !== '' && goToResBlank !== 0 )
+					{
+						window.open( 'http://openheart.ew.loc/index.php?id=' + modx_id );
+					}
+					else
+					{
+						window.location.href = 'http://openheart.ew.loc/index.php?id=' + modx_id;
+					}
+					
+					e.preventDefault(); // остановим открытие балуна
+				}
+			}
+		});
+		// << Обработка события клика на маркере
+		
+		
+		
+	});
+</script>
+        <div class="well3 well3__ins1 container">
+           <address>
+                <p style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;" class="wow fadeInLeft animated" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus.
+                    Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque
+                    penatibus
+                    et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.Fusce feugiat malesuada odio.
+                    Morbi
+                    nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies
+                    pharetra magna. Donec accumsan malesuada orci. Lorem ipsum dolor sit amet, consectetuer adipiscing
+                    elit.
+                    Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit
+                    varius mi.</p>
+
+                <div class="row">
+                    <div style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;" class="grid_3 wow fadeInRight animated" data-wow-delay="0.6s">
+                        <p class="addr">8901 Marmora Road, <br>
+                            Glasgow, D04 89GR.</p>
+                    </div>
+                    <div style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInRight;" class="grid_3 wow fadeInRight animated" data-wow-delay="0.8s">
+                        <p class="phone">+1 800 559 6580 <br>
+                            +1 800 603 6035</p>
+                    </div>
+                    <div style="visibility: visible; animation-delay: 1s; animation-name: fadeInRight;" class="grid_3 wow fadeInRight animated" data-wow-delay="1s">
+                        <p class="mail">
+                            <a href="mailto:#">mail@demolink.org</a>
+                        </p>
+                    </div>
+                </div>
+            </address>
+        </div>
+        <div class="bg-content">
+            <div class="container well3">
+                <h4 style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;" class="wow fadeInUp animated" data-wow-delay="0.4s">обратная связь</h4>
+
+                <form action="http://openheart.ew.loc/bat/MailHandler.php" method="POST" id="contact-form" class="contact-form off1">
+                    <div class="contact-form-loader"></div>
+                    <fieldset>
+                        <div class="row">
+                            <div style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;" class="grid_6 wow fadeInLeft animated" data-wow-delay="0.6s">
+                                <label class="name">
+                                    <input id="regula-generated-955021" name="name" value="" data-constraints="@Required @JustLetters" type="text">
+
+                                    <span class="empty-message">*Обязательное поле.</span>
+                                    <span class="error-message">*Ошибка в имени.</span>
+                                <span style="left: 0px; top: 0px; width: 528px; height: 56px;" class="_placeholder">Имя</span></label>
+
+                                <label class="email">
+                                    <input id="regula-generated-108402" name="email" value="" data-constraints="@Required @Email" type="text">
+
+                                    <span class="empty-message">*Обязательное поле.</span>
+                                    <span class="error-message">*Ошибка в email.</span>
+                                <span style="left: 0px; top: 0px; width: 528px; height: 56px;" class="_placeholder">E-mail</span></label>
+
+                                <label class="phone">
+                                    <input id="regula-generated-953731" name="phone" value="" data-constraints="@JustNumbers" type="text">
+
+                                    <span class="empty-message">*Обязательное поле.</span>
+                                    <span class="error-message">*Ошибка в телефоне.</span>
+                                <span style="left: 0px; top: 0px; width: 528px; height: 56px;" class="_placeholder">Телефон</span></label>
+                            </div>
+
+                            <div style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;" class="grid_6 wow fadeInRight animated" data-wow-delay="0.6s">
+                                <label class="message">
+                                    <textarea id="regula-generated-760340" name="message" data-constraints="@Required @Length(min=20,max=999999)"></textarea>
+
+                                    <span class="empty-message">*Обязательное поле.</span>
+                                    <span class="error-message">*Сообщение слишком короткое.</span>
+                                <span style="left: 0px; top: 1px; width: 528px; height: 216px;" class="_placeholder">Сообщение</span></label>
+                            </div>
+                        </div>
+
+                        <div style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInRight;" class="btn-wr wow fadeInRight animated" data-wow-delay="0.8s">
+                            <a class="btn btn_skin1" href="contacts.html#" data-type="submit">отправить</a>
+                        </div>
+                    </fieldset>
+                    <div class="modal fade response-message">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        ×
+                                    </button>
+                                    <h4 class="modal-title">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                    You message has been sent! We will be in touch soon.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <input name="stripHTML" value="true" type="hidden"></form>
+
+            </div>
+        </div>
+    </section>
+
+    <!--========================================================
+                              FOOTER
+    =========================================================-->
+    <footer id="footer" class="footer page2">
+        <div class="container">
+
+            <ul class="social-list wow fadeInUp" data-wow-delay="0.4s">
+                <li>
+                    <a class="fa fa-linkedin" href="http://openheart.ew.loc/index.html#"></a>
+                </li>
+                <li>
+                    <a class="fa fa-google-plus" href="http://openheart.ew.loc/index.html#"></a>
+                </li>
+                <li>
+                    <a class="fa fa-facebook" href="http://openheart.ew.loc/index.html#"></a>
+                </li>
+                <li>
+                    <a class="fa fa-rss" href="http://openheart.ew.loc/index.html#"></a>
+                </li>
+            </ul>
+
+                        <ul class="footer-menu wow fadeInUp" data-wow-delay="0.6s"><li class="first"><a href="index.html" >Главная</a></li><li><a href="about-us.html" >О нас</a></li><li><a href="we-helped.html" >Мы помогли</a></li><li class="active"><a href="contacts.html" >Контакты</a></li><li class="last"><a href="i-want-to-help!.html" >Хочу помочь!</a></li></ul>
+
+            <div class="copyright wow fadeInUp" data-wow-delay="0.8s">
+                © <span id="copyright-year"></span> <span class="divid"></span>
+                <a href="index.php%3Fid=2.html">Политика Конфиденциальности</a>
+                <!-- {%FOOTER_LINK} -->
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="assets/tpl/js/script.js"></script>
+
+</html>
